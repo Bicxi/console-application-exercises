@@ -51,7 +51,7 @@ void World::printWorld() {
         cout << endl;
     }*/
 
-    cout << "Oberste Bl�cke" << endl;
+    cout << "\n\nOberste Blöcke" << endl;
     for (int y = 0; y < width; y++)
     {
         for (int x = 0; x < length; x++)
@@ -65,8 +65,11 @@ void World::printWorld() {
 
 int World::getZ(int x, int y) {
     //oberstes element (letztes):
-    int z = vecWorld[x][y].size() - 1;
-    return z;
+    if(!vecWorld[x][y].empty()) {
+        int z = vecWorld[x][y].size() - 1;
+        return z;
+    }
+    return -1; // Spalte leer
 }
 
 int World::getValueZ(int x, int y, int z) {
@@ -85,6 +88,9 @@ void World::setValue(int x, int y, int z, int val) {
 }
 
 void World::sortSpalte(int x, int y) {
-    std::sort(vecWorld[x][y].begin(), vecWorld[x][y].end());
+    if(!vecWorld[x][y].empty())
+        std::sort(vecWorld[x][y].begin(), vecWorld[x][y].end());
+    else
+        cout << "Spalte ist leer" << endl;
 }
 

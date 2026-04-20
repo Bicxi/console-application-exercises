@@ -1,4 +1,5 @@
 #include "../Header/ThreeBot.h"
+#include <iostream>
 
 void ThreeBot::abbauen(World& world) {
     int x = this->getX();
@@ -12,6 +13,9 @@ void ThreeBot::abbauen(World& world) {
         world.removeFeld(x, y);
         setPoints(getPoints() + value);
     }
+
+    setZ(world.getZ(x, y));
+    std::cout << "New Z: " << getZ() << std::endl;
 
     return;
 }

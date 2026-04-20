@@ -1,4 +1,5 @@
 #include "../Header/SortBot.h"
+#include <iostream>
 
 void SortBot::abbauen(World& world) {
     int x = this->getX();
@@ -11,4 +12,7 @@ void SortBot::abbauen(World& world) {
     world.removeFeld(x, y);
 
     setPoints(getPoints() + value);
+
+    setZ(world.getZ(x, y));
+    std::cout << "New Z: " << getZ() << std::endl;
 }

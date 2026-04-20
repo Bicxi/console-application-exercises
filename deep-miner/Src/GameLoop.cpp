@@ -105,7 +105,6 @@ void GameLoop::setUpGame() {
 }
 
 void GameLoop::render(){
-    cout << "\n------------------------\n";
 
     vecWorld.printWorld();
 
@@ -120,6 +119,8 @@ void GameLoop::render(){
          << bot2->getY() << ", "
          << bot2->getZ() << ") Score: "
          << bot2->getPoints();
+
+    cout << "\n------------------------\n";
 }
 
 void GameLoop::update()

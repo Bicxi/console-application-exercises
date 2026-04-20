@@ -1,4 +1,5 @@
 #include "../Header/MultikBot.h"
+#include <iostream>
 
 void MultikBot::abbauen(World& world) {
     int x = this->getX();
@@ -13,6 +14,9 @@ void MultikBot::abbauen(World& world) {
     }
 
     setPoints(getPoints() + value);
+
+    setZ(world.getZ(x, y));
+    std::cout << "New Z: " << getZ() << std::endl;
 
     return;
 }

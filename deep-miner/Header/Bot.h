@@ -18,6 +18,9 @@ public:
     int getX();
     int getY();
     int getZ();
+    void setX(int newX);
+    void setY(int newY);
+    void setZ(int newZ);
 
     void setPoints(int newP);
     int getPoints();
