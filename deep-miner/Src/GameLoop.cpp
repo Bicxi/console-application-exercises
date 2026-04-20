@@ -19,6 +19,17 @@ void GameLoop::game() {
     running = true;
 
     cout << "Welcome to Deep Miner!\n" << endl;
+    
+    setUpGame();
+
+    while(running) {
+        render();
+        update();
+    }
+
+}
+
+void GameLoop::setUpGame() {
     cout << "Do you want to:\n1: play yourself or\n2: watch the Computer?\n" << endl;
 
     while(true) {
@@ -91,13 +102,6 @@ void GameLoop::game() {
 
         break;
     }
-
-    //GAMELOOP
-    while(running) {
-        render();
-        update();
-    }
-
 }
 
 void GameLoop::render(){
@@ -191,6 +195,8 @@ Bot* GameLoop::chooseBot() {
     case 3:
         return new MultikBot();
     }
+
+    return nullptr; //sollte nie erreicht werden
 }
 
 void GameLoop::endGame() {

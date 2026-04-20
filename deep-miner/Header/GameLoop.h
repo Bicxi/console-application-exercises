@@ -11,6 +11,7 @@ public:
     GameLoop();
     ~GameLoop();
 
+    void setUpGame();
     void game();
     void endGame();
 
